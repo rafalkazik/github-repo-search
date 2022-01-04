@@ -4,8 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
     <title>GitHub Repo Searcher</title>
   </head>
-  <body></body>
+  <body>
+    <section class="wrapper">
+      <header class="header">
+        <h1 class="header__title">_find_github_repo</h1>
+      </header>
+      <main class="main">
+        <section class="main__find-user find-user">
+          <form action="" class="find-user__form form" novalidate>
+            <label for="username" class="form__label">
+              login GitHub
+              <input
+                type="text"
+                class="form__input"
+                placeholder="GitHub login"
+              />
+            </label>
+            <input type="submit" value="Search" />
+          </form>
+        </section>
+        <section class="main__repositories repositories">
+          <header class="repositories__user user">
+            <picture class="user__picture">
+              <img
+                src="https://avatars.githubusercontent.com/u/583231?v=4"
+                alt="user photo"
+                class="user__img"
+              />
+            </picture>
+            <h2 class="user__name">@octocat</h2>
+          </header>
+          <ul class="repositories__list list">
+            <li class="list__element list__element--prototype">
+              <div class="list__element-repo-name element-repo-name">
+                <h3 class="element-repo-name__title">github-repo-search</h3>
+                <h4 class="element-repo-name__id id">
+                  ID: <span class="id__number">12345</span>
+                </h4>
+              </div>
+              <div class="list__element-repo-lang element-repo-lang">
+                <h3 class="element-repo-lang__type">
+                  <i class="fas fa-circle"></i>JavaScript
+                </h3>
+              </div>
+              <div class="list__element-repo-stars element-repo-stars">
+                <h4 class="element-repo-stars__number">
+                  <i class="fas fa-star"></i>324
+                </h4>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </section>
+  </body>
 </html>
