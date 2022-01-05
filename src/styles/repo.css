@@ -27,7 +27,7 @@
 }
 
 .user__img {
-  width: 30%;
+  width: 50%;
   max-width: 400px;
   border-radius: 50%;
 }
@@ -67,9 +67,8 @@
 }
 
 .list__element-repo-details {
-  display: grid;
-  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
-  justify-items: center;
+  display: flex;
+  justify-content: space-between;
   font-size: 1.2rem;
   margin-top: 1rem;
 }
@@ -93,6 +92,10 @@
   }
   .user__name {
     margin: 1rem 0 3rem 0;
+  }
+
+  .repositories__list {
+    width: 100%;
   }
 
   .list__element {
@@ -120,6 +123,13 @@
   }
 
   .list__element-repo-details {
+    font-size: 1.3rem;
+  }
+
+  .list__element-repo-details {
+    display: grid;
+    grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+    justify-items: center;
     font-size: 1.3rem;
   }
 }

@@ -5,6 +5,40 @@
   width: 90%;
 }
 
+.main__form-instruction {
+  display: flex;
+  align-items: center;
+  /* background: linear-gradient(
+    345deg,
+    var(--purpleElementsColor) 0%,
+    var(--purpleElementsColorHover) 30%,
+    var(--purpleElementsColorHover) 50%,
+    var(--purpleElementsColorHover) 70%,
+    var(--purpleElementsColor) 100%
+  );
+  background-color: var(--purpleElementsColor); */
+
+  border: 3px solid var(--buttonGreyColor);
+  border-radius: 10px;
+  margin-top: 2rem;
+  padding: 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+.fa-search {
+  font-size: 2em;
+  color: var(--purpleElementsColor);
+}
+
+.form-instruction__text {
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--purpleElementsColor);
+  font-weight: 500;
+}
+
 .find-user__form {
   width: 100%;
   display: grid;
@@ -30,14 +64,6 @@
   outline: 2px solid var(--errorBorder);
   outline-offset: -2px;
   position: relative;
-}
-
-.form__input--username::before {
-  content: "error";
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  z-index: 999;
 }
 
 .form__input--username::placeholder {
@@ -67,6 +93,14 @@
 }
 
 @media (min-width: 768px) {
+  .main__find-user {
+    width: 100%;
+  }
+
+  .main__form-instruction {
+    width: 100%;
+  }
+
   .form__input {
     font-size: 1.4rem;
   }
