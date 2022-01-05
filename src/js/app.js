@@ -44,6 +44,7 @@ function loadUserRepos() {
     .catch((err) => {
       usernameInput.value = "";
       usernameInput.classList.add("form__input--username-error");
+      window.location.reload(true);
     });
 }
 
@@ -82,6 +83,91 @@ function insertUserRepos(reposArr) {
       }
     }
     setDescriptionOfRepository();
+
+    function setLanguageOfRepository() {
+      const langOfRepositoryCircle =
+        cloneReposListElement.querySelector(".fa-circle");
+      const langOfRepository = cloneReposListElement.querySelector(
+        ".element-repo-details__lang-text"
+      );
+
+      if (item.language === "JavaScript") {
+        langOfRepositoryCircle.style.color = "#f1e05a";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "TypeScript") {
+        langOfRepositoryCircle.style.color = "#2b7489";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "HTML") {
+        langOfRepositoryCircle.style.color = "#e44b23";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "CSS") {
+        langOfRepositoryCircle.style.color = "#563d7c";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "PHP") {
+        langOfRepositoryCircle.style.color = "#4F5D95";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "Vue") {
+        langOfRepositoryCircle.style.color = "#2c3e50";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "Go") {
+        langOfRepositoryCircle.style.color = "#375eab";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "Swift") {
+        langOfRepositoryCircle.style.color = "#ffac45";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "Java") {
+        langOfRepositoryCircle.style.color = "#b07219";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "Rust") {
+        langOfRepositoryCircle.style.color = "#dea584";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === "Python") {
+        langOfRepositoryCircle.style.color = "#3572A5";
+        return (langOfRepository.innerText = item.language);
+      }
+      if (item.language === null) {
+        langOfRepositoryCircle.style.color = "#b6b6b6";
+        return (langOfRepository.innerText = "no data");
+      } else {
+        langOfRepositoryCircle.style.color = "#2b00d4";
+        return (langOfRepository.innerText = item.language);
+      }
+    }
+    setLanguageOfRepository();
+
+    function setStarsOfRepository() {
+      const starsOfRepository = cloneReposListElement.querySelector(
+        ".element-repo-details__stars-text"
+      );
+      if (item.stargazers_count) {
+        return (starsOfRepository.innerText = item.stargazers_count);
+      } else {
+        return (starsOfRepository.innerText = `0`);
+      }
+    }
+    setStarsOfRepository();
+
+    function setForksOfRepository() {
+      const forksOfRepository = cloneReposListElement.querySelector(
+        ".element-repo-details__forks-text"
+      );
+      if (item.forks) {
+        return (forksOfRepository.innerText = item.forks);
+      } else {
+        return (forksOfRepository.innerText = `0`);
+      }
+    }
+    setForksOfRepository();
 
     reposList.appendChild(cloneReposListElement);
   });
