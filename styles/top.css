@@ -1,0 +1,30 @@
+.header {
+  margin: 1rem 0;
+  animation-duration: 1s;
+  animation-name: headerOpening;
+  animation-iteration-count: 1;
+}
+
+.header__title {
+  font-size: 2.3rem;
+  color: var(--purpleElementsColor);
+}
+
+.header__title--color {
+  color: var(--blueElementsColor);
+}
+
+.header__title,
+.header__title--color {
+  font-weight: 600;
+}
+
+@keyframes headerOpening {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

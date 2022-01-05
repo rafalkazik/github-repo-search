@@ -1,0 +1,47 @@
+@import "./top.css";
+@import "./form.css";
+@import "./repo.css";
+
+:root {
+  --blackColor: #000000;
+  --blueElementsColor: #19dbfe;
+  --buttonGreyColor: #f2f2f2;
+  --darkFontColor: #333333;
+  --fontGreyColor: #b6b6b6;
+  --mainBgc: #fcfcfc;
+  --purpleElementsColor: #2b00d4;
+  --purpleElementsColorHover: #7254ec;
+  --whiteColor: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  background-color: var(--mainBgc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

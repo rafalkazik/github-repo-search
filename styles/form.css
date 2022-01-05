@@ -1,0 +1,54 @@
+.main__find-user {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  width: 90%;
+}
+
+.find-user__form {
+  width: 100%;
+  max-width: 500px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+.form__input {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  font-size: 1.3rem;
+  color: var(--darkFontColor);
+}
+
+.form__input--username {
+  border: 1px solid var(--fontGreyColor);
+  border-radius: 6px 0 0 6px;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: var(--mainBgc);
+}
+
+.form__input--username::placeholder {
+  color: var(--fontGreyColor);
+}
+
+.form__input--username:focus {
+  outline: 2px solid var(--purpleElementsColor);
+  outline-offset: -2px;
+}
+
+.form__input--submit {
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: var(--purpleElementsColor);
+  letter-spacing: 0.05rem;
+  color: var(--whiteColor);
+  padding: 0.5rem 1.4rem;
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+  transition: 0.15s ease-in-out;
+}
+
+.form__input--submit:hover {
+  background-color: var(--purpleElementsColorHover);
+  cursor: pointer;
+}

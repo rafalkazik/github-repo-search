@@ -10,26 +10,43 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/top.css" />
+    <link rel="stylesheet" href="./styles/form.css" />
+    <link rel="stylesheet" href="./styles/repo.css" />
     <title>GitHub Repo Searcher</title>
   </head>
   <body>
     <section class="wrapper">
       <header class="header">
-        <h1 class="header__title">_find_github_repo</h1>
+        <h1 class="header__title">
+          <span class="header__title--color">_</span>find<span
+            class="header__title--color"
+            >_</span
+          >repo
+        </h1>
       </header>
       <main class="main">
         <section class="main__find-user find-user">
           <form action="" class="find-user__form form" novalidate>
             <label for="username" class="form__label">
-              login GitHub
               <input
                 type="text"
-                class="form__input"
-                placeholder="GitHub login"
+                class="form__input form__input--username"
+                placeholder="GitHub username"
               />
             </label>
-            <input type="submit" value="Search" />
+            <input
+              type="submit"
+              class="form__input form__input--submit"
+              value="find"
+            />
           </form>
         </section>
         <section class="main__repositories repositories">
