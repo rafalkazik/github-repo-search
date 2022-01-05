@@ -15,6 +15,7 @@
   --whiteColor: #ffffff;
   --starColor: #ffd700;
   --jsColor: #efd81d;
+  --errorBorder: #ff0033;
 }
 
 * {
