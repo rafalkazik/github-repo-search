@@ -16,20 +16,19 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles/main.css" />
+    <!-- <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/top.css" />
     <link rel="stylesheet" href="./styles/form.css" />
-    <link rel="stylesheet" href="./styles/repo.css" />
+    <link rel="stylesheet" href="./styles/repo.css" /> -->
     <title>GitHub Repo Searcher</title>
   </head>
   <body>
     <section class="wrapper">
       <header class="header">
         <h1 class="header__title">
-          <span class="header__title--color">_</span>find<span
-            class="header__title--color"
-            >_</span
-          >repo
+          find<span class="header__title--color">_</span>rep<i
+            class="fab fa-github"
+          ></i>
         </h1>
       </header>
       <main class="main">
@@ -51,6 +50,7 @@
         </section>
         <section class="main__repositories repositories">
           <header class="repositories__user user">
+            <h2 class="user__title">USER</h2>
             <picture class="user__picture">
               <img
                 src="https://avatars.githubusercontent.com/u/583231?v=4"
@@ -68,14 +68,21 @@
                   ID: <span class="id__number">12345</span>
                 </h4>
               </div>
-              <div class="list__element-repo-lang element-repo-lang">
-                <h3 class="element-repo-lang__type">
-                  <i class="fas fa-circle"></i>JavaScript
-                </h3>
+
+              <div class="list__element-repo-desc element-repo-desc">
+                <p class="element-repo-desc__text">
+                  Example repository's description.
+                </p>
               </div>
-              <div class="list__element-repo-stars element-repo-stars">
-                <h4 class="element-repo-stars__number">
+              <div class="list__element-repo-details element-repo-details">
+                <h4 class="element-repo-details__lang">
+                  <i class="fas fa-circle"></i>JavaScript
+                </h4>
+                <h4 class="element-repo-details__stars">
                   <i class="fas fa-star"></i>324
+                </h4>
+                <h4 class="element-repo-details__forks">
+                  <i class="fas fa-code-branch"></i>22
                 </h4>
               </div>
             </li>

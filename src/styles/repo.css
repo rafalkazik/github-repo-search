@@ -1,0 +1,125 @@
+.main__repositories,
+.repositories__user,
+.user__picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--darkFontColor);
+}
+
+.main__repositories {
+  width: 100%;
+  max-width: 1000px;
+}
+
+.repositories__user {
+  margin-top: 2rem;
+}
+
+.user__title {
+  margin-bottom: 0.5rem;
+  color: var(--purpleElementsColor);
+}
+
+.user__name {
+  margin: 0.5rem 0 1.5rem 0;
+  color: var(--fontGreyColor);
+}
+
+.user__img {
+  width: 30%;
+  max-width: 400px;
+  border-radius: 50%;
+}
+
+.repositories__list {
+  width: 90%;
+  list-style: none;
+}
+
+.list__element {
+  width: 100%;
+  border: 1px solid var(--buttonGreyColor);
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.element-repo-name__title {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+  color: var(--purpleElementsColor);
+}
+
+.element-repo-name__id {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--fontGreyColor);
+}
+
+.list__element-repo-desc {
+  margin: 1rem 0;
+}
+
+.element-repo-desc__text {
+  color: var(--fontDescriptionColor);
+  font-size: 1.15rem;
+}
+
+.list__element-repo-details {
+  display: grid;
+  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  justify-items: center;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.fas {
+  margin-right: 0.5rem;
+}
+
+.fa-circle {
+  font-size: 0.8em;
+  color: var(--jsColor);
+}
+
+.fa-star {
+  color: var(--starColor);
+}
+
+@media (min-width: 768px) {
+  .repositories__user {
+    margin-top: 3rem;
+  }
+  .user__name {
+    margin: 1rem 0 3rem 0;
+  }
+
+  .list__element {
+    margin-bottom: 1.5rem;
+  }
+
+  .list__element-repo-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .element-repo-name__title {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .list__element-repo-desc {
+    margin-bottom: 1.5rem;
+  }
+
+  .element-repo-desc__text {
+    color: var(--fontDescriptionColor);
+    font-size: 1.3rem;
+  }
+
+  .list__element-repo-details {
+    font-size: 1.3rem;
+  }
+}

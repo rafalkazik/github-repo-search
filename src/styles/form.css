@@ -7,7 +7,6 @@
 
 .find-user__form {
   width: 100%;
-  max-width: 500px;
   display: grid;
   grid-template-columns: 80% 20%;
 }
@@ -22,7 +21,7 @@
 .form__input--username {
   border: 1px solid var(--fontGreyColor);
   border-radius: 6px 0 0 6px;
-  padding: 0.5rem;
+  padding: 0.75rem 1rem;
   width: 100%;
   background-color: var(--mainBgc);
 }
@@ -51,4 +50,10 @@
 .form__input--submit:hover {
   background-color: var(--purpleElementsColorHover);
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .form__input {
+    font-size: 1.4rem;
+  }
 }

@@ -1,12 +1,12 @@
 .header {
-  margin: 1rem 0;
+  margin: 3rem 0 2rem 0;
   animation-duration: 1s;
   animation-name: headerOpening;
   animation-iteration-count: 1;
 }
 
 .header__title {
-  font-size: 2.3rem;
+  font-size: 3rem;
   color: var(--purpleElementsColor);
 }
 
@@ -19,6 +19,11 @@
   font-weight: 600;
 }
 
+.fa-github {
+  font-size: 0.75em;
+  margin-left: 0.05em;
+}
+
 @keyframes headerOpening {
   from {
     opacity: 0;
@@ -26,5 +31,15 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    margin-top: 4rem;
+  }
+
+  .header__title {
+    font-size: 4rem;
   }
 }

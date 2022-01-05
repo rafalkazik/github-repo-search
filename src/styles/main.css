@@ -8,10 +8,13 @@
   --buttonGreyColor: #f2f2f2;
   --darkFontColor: #333333;
   --fontGreyColor: #b6b6b6;
+  --fontDescriptionColor: #9e9e9e;
   --mainBgc: #fcfcfc;
   --purpleElementsColor: #2b00d4;
   --purpleElementsColorHover: #7254ec;
   --whiteColor: #ffffff;
+  --starColor: #ffd700;
+  --jsColor: #efd81d;
 }
 
 * {
@@ -41,6 +44,8 @@ body {
 }
 
 .main {
+  width: 100%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
