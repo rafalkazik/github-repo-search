@@ -6,58 +6,48 @@
 }
 
 .main__form-instruction {
-  display: flex;
   align-items: center;
-  /* background: linear-gradient(
-    345deg,
-    var(--purpleElementsColor) 0%,
-    var(--purpleElementsColorHover) 30%,
-    var(--purpleElementsColorHover) 50%,
-    var(--purpleElementsColorHover) 70%,
-    var(--purpleElementsColor) 100%
-  );
-  background-color: var(--purpleElementsColor); */
-
-  border: 3px solid var(--buttonGreyColor);
   border-radius: 10px;
-  margin-top: 2rem;
-  padding: 2rem 2rem;
+  border: 3px solid var(--buttonGreyColor);
+  display: flex;
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
+  padding: 2rem 2rem;
   width: 90%;
 }
 
 .fa-search {
-  font-size: 2em;
   color: var(--purpleElementsColor);
+  font-size: 2em;
 }
 
 .form-instruction__text {
-  text-align: center;
-  font-size: 1.3rem;
   color: var(--purpleElementsColor);
+  font-size: 1.3rem;
   font-weight: 500;
+  text-align: center;
 }
 
 .find-user__form {
-  width: 100%;
   display: grid;
   grid-template-columns: 80% 20%;
+  width: 100%;
 }
 
 .form__input {
-  font-family: "Poppins", sans-serif;
   border: none;
-  font-size: 1.3rem;
   color: var(--darkFontColor);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
 }
 
 .form__input--username {
-  border: 1px solid var(--fontGreyColor);
+  background-color: var(--mainBgc);
   border-radius: 6px 0 0 6px;
+  border: 1px solid var(--fontGreyColor);
   padding: 0.75rem 1rem;
   width: 100%;
-  background-color: var(--mainBgc);
 }
 
 .form__input--username::placeholder {
@@ -65,21 +55,21 @@
 }
 
 .form__input--username:focus {
-  outline: 2px solid var(--purpleElementsColor);
   outline-offset: -2px;
+  outline: 2px solid var(--purpleElementsColor);
 }
 
 .form__input--submit {
-  border: none;
-  border-radius: 0 6px 6px 0;
+  -webkit-appearance: none;
   background-color: var(--purpleElementsColor);
-  letter-spacing: 0.05rem;
+  border-radius: 0 6px 6px 0;
+  border: none;
   color: var(--whiteColor);
+  letter-spacing: 0.05rem;
   padding: 0.5rem 1.4rem;
-  width: 100%;
   transform: translate3d(0, 0, 0);
   transition: 0.15s ease-in-out;
-  -webkit-appearance: none;
+  width: 100%;
 }
 
 .form__input--submit:hover {

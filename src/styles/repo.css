@@ -1,10 +1,10 @@
 .main__repositories,
 .repositories__user,
 .user__picture {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   color: var(--darkFontColor);
+  display: flex;
+  flex-direction: column;
 }
 
 .repositories__loading--active {
@@ -21,39 +21,39 @@
 }
 
 .user__name {
-  margin: 0.5rem 0 1.5rem 0;
   color: var(--fontGreyColor);
+  margin: 0.5rem 0 1.5rem 0;
 }
 
 .user__img {
-  width: 50%;
-  max-width: 400px;
   border-radius: 50%;
+  max-width: 400px;
+  width: 50%;
 }
 
 .repositories__list {
-  width: 90%;
   list-style: none;
+  width: 90%;
 }
 
 .list__element {
-  width: 100%;
-  border: 1px solid var(--buttonGreyColor);
   border-radius: 5px;
-  padding: 1rem;
+  border: 1px solid var(--buttonGreyColor);
   margin-bottom: 1rem;
+  padding: 1rem;
+  width: 100%;
 }
 
 .element-repo-name__title {
+  color: var(--purpleElementsColor);
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
-  color: var(--purpleElementsColor);
 }
 
 .element-repo-name__id {
+  color: var(--fontGreyColor);
   font-size: 1.1rem;
   font-weight: 400;
-  color: var(--fontGreyColor);
 }
 
 .list__element-repo-desc {
@@ -67,8 +67,8 @@
 
 .list__element-repo-details {
   display: flex;
-  justify-content: space-between;
   font-size: 1.2rem;
+  justify-content: space-between;
   margin-top: 1rem;
 }
 
@@ -77,8 +77,8 @@
 }
 
 .fa-circle {
-  font-size: 0.8em;
   color: var(--jsColor);
+  font-size: 0.8em;
 }
 
 .fa-star {
@@ -109,17 +109,17 @@
   }
 
   .list__element-repo-name {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: space-between;
   }
 
   .element-repo-name__title {
-    width: 85%;
-    overflow: hidden;
-    text-overflow: ellipsis;
     font-size: 2.3rem;
     margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 85%;
   }
 
   .list__element-repo-desc {
@@ -137,8 +137,8 @@
 
   .list__element-repo-details {
     display: grid;
+    font-size: 1.3rem;
     grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
     justify-items: center;
-    font-size: 1.3rem;
   }
 }
