@@ -9,7 +9,6 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
 
     filename: "app.min.js",
-    publicPath: "/static/",
   },
   devtool: "inline-source-map",
 

@@ -79,6 +79,7 @@
   width: 100%;
   transform: translate3d(0, 0, 0);
   transition: 0.15s ease-in-out;
+  -webkit-appearance: none;
 }
 
 .form__input--submit:hover {
