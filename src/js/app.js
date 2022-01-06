@@ -7,7 +7,6 @@ const form = document.querySelector(".find-user__form");
 function init(e) {
   e.preventDefault();
   validateForm();
-  // loadUserAvatar();
 }
 
 function validateForm() {
