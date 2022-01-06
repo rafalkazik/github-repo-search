@@ -7,6 +7,8 @@ Technologies and metodologies used in this project:
 **HTML / CSS / BEM / RWD / JavaScript /
 Fetch / GitHub API / Webpack**
 
+#### :clapper: Check live version: **[LIVE](https://rafalkazik.github.io/github-repo-search/)**
+
 ## :gear: Installation
 
 The project uses [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/). To run the app on your device you should install all dependencies. Then create a localhost port and run your web explorer.
