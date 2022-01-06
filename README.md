@@ -31,8 +31,18 @@ Our repositories search engine is ready at port 8080.
 
 ![](./src/assets/search_engine.png)
 
-- enter the username whose repositories you want to see,
-- if you enter an incorrect username or you leave empty input - the page will refresh.
+Enter the username whose repositories you want to see.
+
+**Notice:**
+
+If you:
+
+- enter an incorrect username,
+- leave empty input,
+- enter the username of a non-existing user,
+- enter the username of user who doesn't have public repositories
+
+**the page will refresh!**
 
 ### :star: See the most popular repositories! :star:
 
