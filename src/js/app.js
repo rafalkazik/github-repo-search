@@ -13,14 +13,10 @@ function init(e) {
 function validateForm() {
   let usernameInput = document.querySelector(".form__input--username");
 
-  if (usernameInput.value.length >= 4) {
+  if (usernameInput.value.length >= 1) {
     loadUserRepos();
-    usernameInput.classList.remove("form__input--username-error");
-  }
-
-  if (usernameInput.value.length < 4 || usernameInput.value.length > 39) {
-    usernameInput.value = "";
-    usernameInput.classList.add("form__input--username-error");
+  } else {
+    window.location.reload(true);
   }
 }
 
@@ -35,7 +31,7 @@ function loadUserRepos() {
     return data[0]["owner"]["avatar_url"];
   }
 
-  fetch(`${apiUrl}/${usernameInput.value}/repos`)
+  fetch(`${apiUrl}/${usernameInput.value}/repos?page=1&per_page=1000`)
     .then((resp) => {
       if (resp.ok) {
         return resp.json();
@@ -45,7 +41,6 @@ function loadUserRepos() {
     .then((data) => {
       usernameInput.value = "";
       usernameInput.classList.remove("form__input--username-error");
-
       insertUserRepos(sortedData(data));
       loadUserAvatar(avatarData(data));
       loadUserName(data);
@@ -71,7 +66,7 @@ function insertUserRepos(reposArr) {
       const nameOfRepository = cloneReposListElement.querySelector(
         ".element-repo-name__title"
       );
-      return (nameOfRepository.innerText = item.full_name);
+      return (nameOfRepository.innerText = item.name);
     }
     setNameOfRepository();
 
@@ -194,7 +189,6 @@ function loadUserAvatar(reposAvatar) {
   const userAvatar = document
     .querySelector(".user__img")
     .setAttribute("src", avatarUrl);
-  userAvatar;
 }
 
 function loadUserName(usernameOfRepos) {

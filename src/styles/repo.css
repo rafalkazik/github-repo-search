@@ -7,9 +7,8 @@
   color: var(--darkFontColor);
 }
 
-.main__repositories {
-  width: 100%;
-  max-width: 1000px;
+.repositories__loading--active {
+  display: flex;
 }
 
 .repositories__user {
@@ -19,11 +18,6 @@
 
 .repositories__user--active {
   display: flex;
-}
-
-.user__title {
-  margin-bottom: 0.5rem;
-  color: var(--purpleElementsColor);
 }
 
 .user__name {

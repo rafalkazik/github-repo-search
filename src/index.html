@@ -32,8 +32,7 @@
         <article class="main__form-instruction form-instruction">
           <i class="fas fa-search"></i>
           <h2 class="form-instruction__text">
-            Find the most popular repositories of the selected GitHub user (4 -
-            39 characters)
+            Find the most popular repositories of the selected GitHub user
           </h2>
         </article>
         <section class="main__find-user find-user">
@@ -53,14 +52,10 @@
           </form>
         </section>
         <section class="main__repositories repositories">
+          <div class="repositories__loading"></div>
           <header class="repositories__user user">
-            <h2 class="user__title">USER</h2>
             <picture class="user__picture">
-              <img
-                src="https://avatars.githubusercontent.com/u/583231?v=4"
-                alt="user photo"
-                class="user__img"
-              />
+              <img alt="user photo" class="user__img" />
             </picture>
             <h2 class="user__name"></h2>
           </header>
@@ -72,7 +67,6 @@
                   ID: <span class="id__number">12345</span>
                 </h4>
               </div>
-
               <div class="list__element-repo-desc element-repo-desc">
                 <p class="element-repo-desc__text">
                   Example repository's description.

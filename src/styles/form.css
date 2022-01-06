@@ -60,12 +60,6 @@
   background-color: var(--mainBgc);
 }
 
-.form__input--username-error {
-  outline: 2px solid var(--errorBorder);
-  outline-offset: -2px;
-  position: relative;
-}
-
 .form__input--username::placeholder {
   color: var(--fontGreyColor);
 }
