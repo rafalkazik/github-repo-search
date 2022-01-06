@@ -72,7 +72,8 @@
 .form__input--submit {
   border: none;
   border-radius: 0 6px 6px 0;
-  background-color: var(--purpleElementsColor);
+  /* background-color: var(--purpleElementsColor); */
+  background-color: var(--fontGreyColor);
   letter-spacing: 0.05rem;
   color: var(--whiteColor);
   padding: 0.5rem 1.4rem;
