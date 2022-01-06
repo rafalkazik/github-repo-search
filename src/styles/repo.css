@@ -13,7 +13,12 @@
 }
 
 .repositories__user {
+  display: none;
   margin-top: 2rem;
+}
+
+.repositories__user--active {
+  display: flex;
 }
 
 .user__title {
@@ -84,6 +89,12 @@
 
 .fa-star {
   color: var(--starColor);
+}
+
+/* prototype */
+
+.list__element--prototype {
+  display: none;
 }
 
 @media (min-width: 768px) {

@@ -27,6 +27,14 @@ function validateForm() {
 function loadUserRepos() {
   let usernameInput = document.querySelector(".form__input--username");
 
+  function sortedData(data) {
+    return data.sort((a, b) => b.stargazers_count - a.stargazers_count);
+  }
+
+  function avatarData(data) {
+    return data[0]["owner"]["avatar_url"];
+  }
+
   fetch(`${apiUrl}/${usernameInput.value}/repos`)
     .then((resp) => {
       if (resp.ok) {
@@ -37,8 +45,9 @@ function loadUserRepos() {
     .then((data) => {
       usernameInput.value = "";
       usernameInput.classList.remove("form__input--username-error");
-      insertUserRepos(data);
-      loadUserAvatar(data);
+
+      insertUserRepos(sortedData(data));
+      loadUserAvatar(avatarData(data));
       loadUserName(data);
     })
     .catch((err) => {
@@ -173,8 +182,15 @@ function insertUserRepos(reposArr) {
   });
 }
 
-function loadUserAvatar(reposAv) {
-  const avatarUrl = reposAv[0]["owner"]["avatar_url"];
+function showAvatarSection() {
+  const avatarHeaderElement = document.querySelector(".repositories__user");
+  return avatarHeaderElement.classList.add("repositories__user--active");
+}
+
+function loadUserAvatar(reposAvatar) {
+  showAvatarSection();
+
+  const avatarUrl = reposAvatar;
   const userAvatar = document
     .querySelector(".user__img")
     .setAttribute("src", avatarUrl);

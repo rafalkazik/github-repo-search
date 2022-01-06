@@ -1,6 +1,6 @@
 .header {
   margin: 3rem 0 2rem 0;
-  animation-duration: 1s;
+  animation-duration: 1.3s;
   animation-name: headerOpening;
   animation-iteration-count: 1;
 }
@@ -36,7 +36,7 @@
 
 @media (min-width: 768px) {
   .header {
-    margin-top: 4rem;
+    margin-top: 10rem;
   }
 
   .header__title {
