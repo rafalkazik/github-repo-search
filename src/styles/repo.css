@@ -48,6 +48,16 @@
   color: var(--purpleElementsColor);
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
+  transition: 0.3s ease-in-out;
+}
+
+.element-repo-name__link {
+  text-decoration: none;
+  color: var(--purpleElementsColor);
+}
+
+.element-repo-name__title:hover {
+  color: var(--purpleElementsColorHover);
 }
 
 .element-repo-name__id {
@@ -118,8 +128,6 @@
     font-size: 2.3rem;
     margin-bottom: 0.5rem;
     overflow: hidden;
-    text-overflow: ellipsis;
-    width: 85%;
   }
 
   .list__element-repo-desc {

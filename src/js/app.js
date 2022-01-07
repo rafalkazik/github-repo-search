@@ -1,4 +1,7 @@
 import css from "../styles/main.css";
+import { getRepos } from "./GitHubProvider";
+import { sortResponseByStar } from "./GitHubHelper";
+import { colorList } from "./LanguageColors";
 
 const apiUrl = "https://api.github.com/users";
 
@@ -22,25 +25,15 @@ function validateForm() {
 function loadUserRepos() {
   let usernameInput = document.querySelector(".form__input--username");
 
-  function sortedData(data) {
-    return data.sort((a, b) => b.stargazers_count - a.stargazers_count);
-  }
-
   function avatarData(data) {
     return data[0]["owner"]["avatar_url"];
   }
 
-  fetch(`${apiUrl}/${usernameInput.value}/repos?page=1&per_page=1000`)
-    .then((resp) => {
-      if (resp.ok) {
-        return resp.json();
-      }
-      return Promise.reject(resp);
-    })
+  getRepos(1, 1000)
     .then((data) => {
       usernameInput.value = "";
       usernameInput.classList.remove("form__input--username-error");
-      insertUserRepos(sortedData(data));
+      insertUserRepos(sortResponseByStar(data));
       loadUserAvatar(avatarData(data));
       loadUserName(data);
     })
@@ -61,31 +54,40 @@ function insertUserRepos(reposArr) {
     const cloneReposListElement = reposListElement.cloneNode(true);
     cloneReposListElement.classList.remove("list__element--prototype");
 
-    function setNameOfRepository() {
+    function setRepoLink(repoLink) {
+      const repoUrl = cloneReposListElement.querySelector(
+        ".element-repo-name__link"
+      );
+      repoUrl.setAttribute("href", repoLink);
+    }
+    setRepoLink(item["html_url"]);
+
+    function setNameOfRepository(repoName) {
       const nameOfRepository = cloneReposListElement.querySelector(
         ".element-repo-name__title"
       );
-      return (nameOfRepository.innerText = item.name);
-    }
-    setNameOfRepository();
 
-    function setIdOfRepository() {
+      nameOfRepository.innerText = repoName;
+    }
+    setNameOfRepository(item.name.replaceAll("_", "-"));
+
+    function setIdOfRepository(repoId) {
       const idOfRepository = cloneReposListElement.querySelector(".id__number");
-      return (idOfRepository.innerText = item.id);
+      idOfRepository.innerText = repoId;
     }
-    setIdOfRepository();
+    setIdOfRepository(item.id);
 
-    function setDescriptionOfRepository() {
+    function setDescriptionOfRepository(repoDescription) {
       const descOfRepository = cloneReposListElement.querySelector(
         ".element-repo-desc__text"
       );
-      if (item.description) {
-        return (descOfRepository.innerText = item.description);
+      if (repoDescription) {
+        descOfRepository.innerText = repoDescription;
       } else {
-        return (descOfRepository.innerText = `No description`);
+        descOfRepository.innerText = `No description`;
       }
     }
-    setDescriptionOfRepository();
+    setDescriptionOfRepository(item.description);
 
     function setLanguageOfRepository() {
       const langOfRepositoryCircle =
@@ -94,56 +96,13 @@ function insertUserRepos(reposArr) {
         ".element-repo-details__lang-text"
       );
 
-      if (item.language === "JavaScript") {
-        langOfRepositoryCircle.style.color = "#f1e05a";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "TypeScript") {
-        langOfRepositoryCircle.style.color = "#2b7489";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "HTML") {
-        langOfRepositoryCircle.style.color = "#e44b23";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "CSS") {
-        langOfRepositoryCircle.style.color = "#563d7c";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "PHP") {
-        langOfRepositoryCircle.style.color = "#4F5D95";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "Vue") {
-        langOfRepositoryCircle.style.color = "#2c3e50";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "Go") {
-        langOfRepositoryCircle.style.color = "#375eab";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "Swift") {
-        langOfRepositoryCircle.style.color = "#ffac45";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "Java") {
-        langOfRepositoryCircle.style.color = "#b07219";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "Rust") {
-        langOfRepositoryCircle.style.color = "#dea584";
-        return (langOfRepository.innerText = item.language);
-      }
-      if (item.language === "Python") {
-        langOfRepositoryCircle.style.color = "#3572A5";
-        return (langOfRepository.innerText = item.language);
-      }
       if (item.language === null) {
         langOfRepositoryCircle.style.color = "#b6b6b6";
         return (langOfRepository.innerText = "no data");
       } else {
-        langOfRepositoryCircle.style.color = "#2b00d4";
-        return (langOfRepository.innerText = item.language);
+        const color = colorList[item.language];
+        langOfRepositoryCircle.style.color = color;
+        langOfRepository.innerText = item.language;
       }
     }
     setLanguageOfRepository();
