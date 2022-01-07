@@ -95,8 +95,6 @@
   color: var(--starColor);
 }
 
-/* prototype */
-
 .list__element--prototype {
   display: none;
 }
