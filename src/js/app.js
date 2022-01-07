@@ -1,6 +1,7 @@
 import css from "../styles/main.css";
 import { getRepos } from "./GitHubProvider";
 import { sortResponseByStar } from "./GitHubHelper";
+import { avatarData } from "./GitHubHelper";
 import { colorList } from "./LanguageColors";
 
 const apiUrl = "https://api.github.com/users";
@@ -25,11 +26,7 @@ function validateForm() {
 function loadUserRepos() {
   let usernameInput = document.querySelector(".form__input--username");
 
-  function avatarData(data) {
-    return data[0]["owner"]["avatar_url"];
-  }
-
-  getRepos(1, 1000)
+  getRepos(1, 1000, usernameInput)
     .then((data) => {
       usernameInput.value = "";
       usernameInput.classList.remove("form__input--username-error");
@@ -54,26 +51,23 @@ function insertUserRepos(reposArr) {
     const cloneReposListElement = reposListElement.cloneNode(true);
     cloneReposListElement.classList.remove("list__element--prototype");
 
-    function setRepoLink(repoLink) {
-      const repoUrl = cloneReposListElement.querySelector(
-        ".element-repo-name__link"
-      );
+    function setRepoLink(repoLink, targetSelector) {
+      const repoUrl = cloneReposListElement.querySelector(targetSelector);
       repoUrl.setAttribute("href", repoLink);
     }
-    setRepoLink(item["html_url"]);
+    setRepoLink(item["html_url"], ".element-repo-name__link");
 
     function setNameOfRepository(repoName) {
-      const nameOfRepository = cloneReposListElement.querySelector(
+      const nameOfRepository = (cloneReposListElement.querySelector(
         ".element-repo-name__title"
-      );
-
-      nameOfRepository.innerText = repoName;
+      ).innerText = repoName);
     }
     setNameOfRepository(item.name.replaceAll("_", "-"));
 
     function setIdOfRepository(repoId) {
-      const idOfRepository = cloneReposListElement.querySelector(".id__number");
-      idOfRepository.innerText = repoId;
+      const idOfRepository = (cloneReposListElement.querySelector(
+        ".id__number"
+      ).innerText = repoId);
     }
     setIdOfRepository(item.id);
 
